@@ -1,0 +1,10 @@
+{
+	"name": "jquery-uipages",
+	"url" : "https://github.com/gogoprog/jquery-uipages/",
+	"license": "MIT",
+	"tags": ["js", "jquery","plugin"],
+	"description": "JQuery UIPages plugin",
+	"version": "0.0.1",
+	"releasenote": "",
+	"contributors": ["gogoprog"]
+}
