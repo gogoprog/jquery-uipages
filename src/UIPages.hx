@@ -1,4 +1,5 @@
 import js.Browser;
+import js.JQuery;
 
 class UIPages
 {
@@ -7,8 +8,22 @@ class UIPages
         untyped Browser.window.jQuery.prototype["uiPages"] = uiPages;
     }
 
-    static function uiPages()
+    static var instances = new Map<String, PagesSet>();
+
+    static function uiPages(?parameters)
     {
-        trace("Hello");
+        var that:JQuery = untyped __js__("this");
+
+        if(Type.getClass(parameters) == String)
+        {
+            createSet(parameters, that);
+        }
+    }
+
+    public static function createSet(name, parent)
+    {
+        trace("Creating set : " + name);
+
+        
     }
 }
