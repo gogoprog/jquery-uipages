@@ -10,15 +10,23 @@ class UIPages
 
     static var instances = new Map<JQuery, PagesSet>();
 
-    static function uiPages(?parameter1, ?parameter2)
+    static function uiPages(?parameter1)
     {
         var that:JQuery = untyped __js__("this");
 
-        if(parameter1 == null && parameter2 == null)
+        if(parameter1 == null)
         {
             createSet(that);
         }
-        else if(Type.getClass(parameter1) == String)
+        else if(parameter1 == 'next')
+        {
+            instances[that].nextPage();
+        }
+        else if(parameter1 == 'previous')
+        {
+            instances[that].previousPage();
+        }
+        else if(parameter1 != null)
         {
             instances[that].showPage(parameter1);
         }

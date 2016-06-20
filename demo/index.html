@@ -25,17 +25,31 @@
     </head>
     <body>
         <div id="pages">
-            <div>First page</div>
-            <div id="second">Second page</div>
-            <div class="third">Third page</div>
-            <div>Forth page</div>
+            <div>
+                First page
+                <input type="button" value="Go to second page" onclick="container.uiPages('#second');"/>
+            </div>
+            <div id="second">
+                Second page
+                <input type="button" value="Go to third page" onclick="container.uiPages('.third');"/>
+            </div>
+            <div class="third">
+                Third page
+                <input type="button" value="Go to fourth page" onclick="container.uiPages(3);"/>
+            </div>
+            <div>
+                Fourth page
+                <input type="button" value="Go to first page" onclick="container.uiPages(0);"/>
+            </div>
         </div>
+        <input type="button" value="Previous" onclick="container.uiPages('previous');"/>
+        <input type="button" value="Next" onclick="container.uiPages('next');"/>
         <script>
             var container;
             $(function() {
                 container = $("#pages").uiPages();
 
-                container.uiPages("#second");
+                container.uiPages(0);
             });
         </script>
     </body>
