@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>jQuery Boilerplate</title>
+        <title>jQuery UIPages demo</title>
         <script src="../node_modules/jquery/dist/jquery.min.js"></script>
         <script src="../dist/jquery.uipages.js"></script>
+        <style>
+            #pages {
+                display: block;
+                width:512px;
+                height:512px;
+                border:1px solid black;
+            }
+
+            #pages > div {
+                position:relative;
+                left:0;
+                top:0;
+                width:100%;
+                height:100%;
+                display: none;
+                background-color:grey;
+            }
+        </style>
     </head>
     <body>
-        <div id="element">Hello World</div>
+        <div id="pages">
+            <div>First page</div>
+            <div id="second">Second page</div>
+            <div class="third">Third page</div>
+            <div>Forth page</div>
+        </div>
         <script>
-            $( function() {
-                $( "#element" ).uiPages("test");
-            } );
+            var container;
+            $(function() {
+                container = $("#pages").uiPages();
+
+                container.uiPages("#second");
+            });
         </script>
     </body>
 </html>

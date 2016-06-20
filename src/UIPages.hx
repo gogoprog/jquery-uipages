@@ -8,22 +8,28 @@ class UIPages
         untyped Browser.window.jQuery.prototype["uiPages"] = uiPages;
     }
 
-    static var instances = new Map<String, PagesSet>();
+    static var instances = new Map<JQuery, PagesSet>();
 
-    static function uiPages(?parameters)
+    static function uiPages(?parameter1, ?parameter2)
     {
         var that:JQuery = untyped __js__("this");
 
-        if(Type.getClass(parameters) == String)
+        if(parameter1 == null && parameter2 == null)
         {
-            createSet(parameters, that);
+            createSet(that);
         }
+        else if(Type.getClass(parameter1) == String)
+        {
+            instances[that].showPage(parameter1);
+        }
+
+        return that;
     }
 
-    public static function createSet(name, parent)
+    public static function createSet(parent:JQuery)
     {
-        trace("Creating set : " + name);
-
-        
+        var instance = new PagesSet(parent);
+        instances[parent] = instance;
+        return instance;
     }
 }
