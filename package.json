@@ -1,7 +1,7 @@
 {
   "name": "jquery-uipages",
   "version": "0.0.1",
-  "description": "A jump-start for jQuery plugins development.",
+  "description": "JQuery UIPages plugin.",
   "keywords": [
     "jquery-plugin",
     "jquery",
