@@ -10,13 +10,13 @@ class UIPages
 
     static var instances = new Map<JQuery, PagesSet>();
 
-    static function uiPages(?parameter1)
+    static function uiPages(?parameter1, ?parameter2)
     {
         var that:JQuery = untyped __js__("this");
 
-        if(parameter1 == null)
+        if(parameter1 == null || (parameter1 != null && parameter2 != null))
         {
-            createSet(that);
+            createSet(that, parameter1, parameter2);
         }
         else if(parameter1 == 'next')
         {
@@ -34,9 +34,9 @@ class UIPages
         return that;
     }
 
-    public static function createSet(parent:JQuery)
+    public static function createSet(parent:JQuery, ?showOptions, ?hideOptions)
     {
-        var instance = new PagesSet(parent);
+        var instance = new PagesSet(parent, showOptions, hideOptions);
         instances[parent] = instance;
         return instance;
     }

@@ -3,17 +3,19 @@
     <head>
         <title>jQuery UIPages demo</title>
         <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0-rc.2/jquery-ui.min.js"></script>
         <script src="../dist/jquery.uipages.js"></script>
         <style>
             #pages {
                 display: block;
+                position: relative;
                 width:512px;
                 height:512px;
                 border:1px solid black;
             }
 
             #pages > div {
-                position:relative;
+                position:absolute;
                 left:0;
                 top:0;
                 width:100%;
@@ -47,7 +49,7 @@
         <script>
             var container;
             $(function() {
-                container = $("#pages").uiPages();
+                container = $("#pages").uiPages({effect:'scale'}, {effect:'scale'});
 
                 container.uiPages(0);
             });

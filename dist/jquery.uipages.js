@@ -1,7 +1,9 @@
 (function (console) { "use strict";
-var PagesSet = function(parent_) {
+var PagesSet = function(parent_,showOptions_,hideOptions_) {
 	this.currentPageIndex = 0;
 	this.parent = parent_;
+	this.showOptions = showOptions_;
+	this.hideOptions = hideOptions_;
 };
 PagesSet.prototype = {
 	showPage: function(selector) {
@@ -10,8 +12,8 @@ PagesSet.prototype = {
 		if(((selector | 0) === selector)) page = js.JQuery(this.parent.children()[selector]); else if(typeof(selector) == "string") page = this.parent.find(selector); else page = selector;
 		this.parent.children().each(function() {
 			var that = js.JQuery(this);
-			if(that[0] != page[0]) that.hide(); else {
-				that.show();
+			if(that[0] != page[0]) that.hide(_g.hideOptions); else {
+				that.show(_g.showOptions);
 				_g.currentPage = that;
 				_g.currentPageId = that.attr("id");
 				_g.currentPageIndex = that.index();
@@ -34,13 +36,13 @@ var UIPages = function() { };
 UIPages.main = function() {
 	window.jQuery.prototype.uiPages = UIPages.uiPages;
 };
-UIPages.uiPages = function(parameter1) {
+UIPages.uiPages = function(parameter1,parameter2) {
 	var that = this;
-	if(parameter1 == null) UIPages.createSet(that); else if(parameter1 == "next") UIPages.instances.h[that.__id__].nextPage(); else if(parameter1 == "previous") UIPages.instances.h[that.__id__].previousPage(); else if(parameter1 != null) UIPages.instances.h[that.__id__].showPage(parameter1);
+	if(parameter1 == null || parameter1 != null && parameter2 != null) UIPages.createSet(that,parameter1,parameter2); else if(parameter1 == "next") UIPages.instances.h[that.__id__].nextPage(); else if(parameter1 == "previous") UIPages.instances.h[that.__id__].previousPage(); else if(parameter1 != null) UIPages.instances.h[that.__id__].showPage(parameter1);
 	return that;
 };
-UIPages.createSet = function(parent) {
-	var instance = new PagesSet(parent);
+UIPages.createSet = function(parent,showOptions,hideOptions) {
+	var instance = new PagesSet(parent,showOptions,hideOptions);
 	{
 		UIPages.instances.set(parent,instance);
 		instance;

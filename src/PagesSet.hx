@@ -2,14 +2,18 @@ import js.JQuery;
 
 class PagesSet
 {
+    private var showOptions(default, default):Dynamic;
+    private var hideOptions(default, default):Dynamic;
     private var parent:JQuery;
     private var currentPage:JQuery;
     private var currentPageId:String;
     private var currentPageIndex:Int = 0;
 
-    public function new(parent_:JQuery)
+    public function new(parent_:JQuery, ?showOptions_, ?hideOptions_)
     {
         parent = parent_;
+        showOptions = showOptions_;
+        hideOptions = hideOptions_;
     }
 
     public function showPage(selector:Dynamic)
@@ -34,11 +38,12 @@ class PagesSet
 
             if(that[0] != page[0])
             {
-                that.hide();
+                that.hide(this.hideOptions);
             }
             else
             {
-                that.show();
+                that.show(this.showOptions);
+
                 this.currentPage = that;
                 this.currentPageId = that.attr("id");
                 this.currentPageIndex = that.index();
