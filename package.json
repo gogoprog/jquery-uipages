@@ -1,7 +1,7 @@
 {
   "name": "jquery-uipages",
   "version": "0.0.1",
-  "description": "JQuery UIPages plugin.",
+  "description": "A jQuery plugin to manage several pages in a html document",
   "keywords": [
     "jquery-plugin",
     "jquery",

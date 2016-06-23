@@ -3,7 +3,7 @@
 	"url" : "https://github.com/gogoprog/jquery-uipages/",
 	"license": "MIT",
 	"tags": ["js", "jquery","plugin"],
-	"description": "JQuery UIPages plugin",
+	"description": "A jQuery plugin to manage several pages in a html document",
 	"version": "0.0.1",
 	"releasenote": "",
 	"contributors": ["gogoprog"]
