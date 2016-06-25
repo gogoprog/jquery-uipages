@@ -1,3 +1,5 @@
+package js;
+
 import js.Browser;
 import js.JQuery;
 

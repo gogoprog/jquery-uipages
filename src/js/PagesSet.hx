@@ -1,3 +1,5 @@
+package js;
+
 import js.JQuery;
 
 class PagesSet

@@ -1,11 +1,24 @@
 (function (console) { "use strict";
-var PagesSet = function(parent_,showOptions_,hideOptions_) {
+var haxe_IMap = function() { };
+var haxe_ds_ObjectMap = function() {
+	this.h = { };
+	this.h.__keys__ = { };
+};
+haxe_ds_ObjectMap.__interfaces__ = [haxe_IMap];
+haxe_ds_ObjectMap.prototype = {
+	set: function(key,value) {
+		var id = key.__id__ || (key.__id__ = ++haxe_ds_ObjectMap.count);
+		this.h[id] = value;
+		this.h.__keys__[id] = key;
+	}
+};
+var js_PagesSet = function(parent_,showOptions_,hideOptions_) {
 	this.currentPageIndex = 0;
 	this.parent = parent_;
 	this.showOptions = showOptions_;
 	this.hideOptions = hideOptions_;
 };
-PagesSet.prototype = {
+js_PagesSet.prototype = {
 	showPage: function(selector) {
 		var _g = this;
 		var page;
@@ -32,40 +45,27 @@ PagesSet.prototype = {
 		this.showPage(index);
 	}
 };
-var UIPages = function() { };
-UIPages.main = function() {
-	window.jQuery.prototype.uiPages = UIPages.uiPages;
+var js_UIPages = function() { };
+js_UIPages.main = function() {
+	window.jQuery.prototype.uiPages = js_UIPages.uiPages;
 };
-UIPages.uiPages = function(parameter1,parameter2) {
+js_UIPages.uiPages = function(parameter1,parameter2) {
 	var that = this;
-	if(parameter1 == null || parameter1 != null && parameter2 != null) UIPages.createSet(that,parameter1,parameter2); else if(parameter1 == "next") UIPages.instances.h[that.__id__].nextPage(); else if(parameter1 == "previous") UIPages.instances.h[that.__id__].previousPage(); else if(parameter1 != null) UIPages.instances.h[that.__id__].showPage(parameter1);
+	if(parameter1 == null || parameter1 != null && parameter2 != null) js_UIPages.createSet(that,parameter1,parameter2); else if(parameter1 == "next") js_UIPages.instances.h[that.__id__].nextPage(); else if(parameter1 == "previous") js_UIPages.instances.h[that.__id__].previousPage(); else if(parameter1 != null) js_UIPages.instances.h[that.__id__].showPage(parameter1);
 	return that;
 };
-UIPages.createSet = function(parent,showOptions,hideOptions) {
-	var instance = new PagesSet(parent,showOptions,hideOptions);
+js_UIPages.createSet = function(parent,showOptions,hideOptions) {
+	var instance = new js_PagesSet(parent,showOptions,hideOptions);
 	{
-		UIPages.instances.set(parent,instance);
+		js_UIPages.instances.set(parent,instance);
 		instance;
 	}
 	return instance;
 };
-var haxe_IMap = function() { };
-var haxe_ds_ObjectMap = function() {
-	this.h = { };
-	this.h.__keys__ = { };
-};
-haxe_ds_ObjectMap.__interfaces__ = [haxe_IMap];
-haxe_ds_ObjectMap.prototype = {
-	set: function(key,value) {
-		var id = key.__id__ || (key.__id__ = ++haxe_ds_ObjectMap.count);
-		this.h[id] = value;
-		this.h.__keys__[id] = key;
-	}
-};
 var q = window.jQuery;
 var js = js || {}
 js.JQuery = q;
-UIPages.instances = new haxe_ds_ObjectMap();
 haxe_ds_ObjectMap.count = 0;
-UIPages.main();
+js_UIPages.instances = new haxe_ds_ObjectMap();
+js_UIPages.main();
 })(typeof console != "undefined" ? console : {log:function(){}});
