@@ -1,6 +1,6 @@
 package js;
 
-import js.JQuery;
+import js.jquery.JQuery;
 
 class PagesSet
 {
@@ -35,7 +35,7 @@ class PagesSet
             page = selector;
         }
 
-        parent.children().each(function(){
+        parent.children().each(function(index:Int, element:js.html.Element){
             var that:JQuery = new JQuery(untyped __js__("this"));
 
             if(that[0] != page[0])

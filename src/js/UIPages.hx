@@ -1,7 +1,7 @@
 package js;
 
 import js.Browser;
-import js.JQuery;
+import js.jquery.JQuery;
 
 class UIPages
 {
