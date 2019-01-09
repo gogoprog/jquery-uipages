@@ -1,17 +1,18 @@
 #pages {
-    display: block;
-    position: relative;
-    width:512px;
-    height:512px;
-    border:1px solid black;
+  display: block;
+  position: relative;
+  width: 512px;
+  height: 512px;
+  border: 1px solid black;
+  margin: 10px;
 }
 
-#pages > div {
-    position:absolute;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    display: none;
-    background-color:grey;
+#pages>div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: #ccc;
 }

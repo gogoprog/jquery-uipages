@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>jQuery UIPages demo</title>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.0-rc.2/jquery-ui.min.js"></script>
-        <script src="../dist/jquery.uipages.js"></script>
-        <script src="demo.js"></script>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-        <div id="pages">
-            <div>
-                First page
-                <input type="button" value="Go to second page" onclick="container.uiPages('#second');"/>
-            </div>
-            <div id="second">
-                Second page
-                <input type="button" value="Go to third page" onclick="container.uiPages('.third');"/>
-            </div>
-            <div class="third">
-                Third page
-                <input type="button" value="Go to fourth page" onclick="container.uiPages(3);"/>
-            </div>
-            <div>
-                Fourth page
-                <input type="button" value="Go to first page" onclick="container.uiPages(0);"/>
-            </div>
-        </div>
-        <input type="button" value="Previous" onclick="container.uiPages('previous');"/>
-        <input type="button" value="Next" onclick="container.uiPages('next');"/>
-    </body>
+
+<head>
+  <title>jQuery UIPages demo</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../dist/jquery.uipages.js"></script>
+  <script src="demo.js"></script>
+  <link rel="stylesheet" type="text/css" href=" https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div id="pages">
+    <div class="home">
+      Home
+      <hr/>
+      <button class="gotoSecond">Go to second page</button>
+    </div>
+    <div id="second">
+      Second page
+      <hr/>
+      <button class="gotoThird">Go to third page</button>
+    </div>
+    <div class="third">
+      Third page
+      <hr/>
+    </div>
+    <div>
+      Fourth page
+      <hr/>
+      <button class="homeButton">Home</button>
+    </div>
+  </div>
+  <button class="homeButton">Home</button>
+  <button class="previousButton">Previous</button>
+  <button class="nextButton">Next</button>
+</body>
+
 </html>

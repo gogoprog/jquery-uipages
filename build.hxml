@@ -1,3 +1,3 @@
 -cp src
 -js dist/jquery.uipages.js
--main js.UIPages
+-main js.uipages.Lib
