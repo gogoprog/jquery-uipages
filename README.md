@@ -30,7 +30,7 @@ See [demo code](https://github.com/gogoprog/jquery-uipages/blob/master/demo/demo
 ##### With absolute index
 
 ```javascript
-	$(".parent_div").uiPages(1);
+    $(".parent_div").uiPages(1);
 ```
 
 ##### With relative index
