@@ -1,13 +1,14 @@
 #pages {
   display: block;
   position: relative;
-  width: 512px;
-  height: 512px;
+  width: 256px;
+  height: 256px;
   border: 1px solid black;
   margin: 10px;
 }
 
 #pages>div {
+  box-sizing: border-box;
   position: absolute;
   left: 0;
   top: 0;
@@ -15,4 +16,5 @@
   height: 100%;
   display: none;
   background-color: #ccc;
+  padding:10px;
 }
