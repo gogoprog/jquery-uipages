@@ -1,33 +1,30 @@
 {
-  "name": "jquery-uipages",
-  "version": "1.0.0",
-  "description": "A jQuery plugin to manage several pages in a html document",
-  "keywords": [
-    "jquery-plugin",
-    "jquery",
-    "pages",
-    "plugins"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gogoprog/jquery-uipages.git"
-  },
-  "bugs": {
-    "url": "https://github.com/gogoprog/jquery-uipages/issues"
-  },
-  "author": {
-    "name": "Gauthier Billot",
-    "email": "gogoprog@gmail.com",
-    "url": "https://github.com/gogoprog"
-  },
-  "contributors": [
-  ],
-  "license": "MIT",
-  "dependencies": {
-    "jquery": ">=1.5.1"
-  },
-  "devDependencies": {
-  },
-  "scripts": {
-  }
+    "name": "jquery-uipages",
+    "version": "1.1.0",
+    "description": "A jQuery plugin to manage several pages in a html document",
+    "keywords": [
+        "jquery-plugin",
+        "jquery",
+        "pages",
+        "plugins"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gogoprog/jquery-uipages.git"
+    },
+    "bugs": {
+        "url": "https://github.com/gogoprog/jquery-uipages/issues"
+    },
+    "author": {
+        "name": "Gauthier Billot",
+        "email": "gogoprog@gmail.com",
+        "url": "https://github.com/gogoprog"
+    },
+    "contributors": [],
+    "license": "MIT",
+    "dependencies": {
+        "jquery": ">=1.5.1"
+    },
+    "devDependencies": {},
+    "scripts": {}
 }

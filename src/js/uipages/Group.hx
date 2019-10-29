@@ -16,8 +16,9 @@ class Group {
         this.hideOptions = hideOptions;
     }
 
-    public function showPage(selector:Dynamic) {
+    public function showPage(selector:Dynamic, ?overrideShowOptions:Dynamic, ?overrideHideOptions:Dynamic) {
         var page:JQuery;
+
         if(Std.is(selector, Int)) {
             page = new JQuery(parent.children()[selector]);
         } else if(Std.is(selector, String)) {
@@ -25,12 +26,14 @@ class Group {
         } else {
             page = selector;
         }
+
         parent.children().each(function(index:Int, element:js.html.Element) {
             var that:JQuery = new JQuery(untyped __js__("this"));
+
             if(that[0] != page[0]) {
-                that.hide(this.hideOptions);
+                that.hide(overrideHideOptions || this.hideOptions);
             } else {
-                that.show(this.showOptions);
+                that.show(overrideShowOptions || this.showOptions);
                 this.currentPage = that;
                 this.currentPageId = that.attr("id");
                 this.currentPageIndex = that.index();
@@ -41,17 +44,21 @@ class Group {
     public function nextPage() {
         var index = currentPageIndex + 1;
         var len = parent.children().length;
+
         if(index >= len) {
             index -= len;
         }
+
         showPage(index);
     }
 
     public function previousPage() {
         var index = currentPageIndex - 1;
+
         if(index < 0) {
             index += parent.children().length;
         }
+
         showPage(index);
     }
 }

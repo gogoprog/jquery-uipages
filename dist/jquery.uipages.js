@@ -19,7 +19,7 @@ var js_uipages_Group = function(parent,showOptions,hideOptions) {
 	this.hideOptions = hideOptions;
 };
 js_uipages_Group.prototype = {
-	showPage: function(selector) {
+	showPage: function(selector,overrideShowOptions,overrideHideOptions) {
 		var _gthis = this;
 		var page;
 		if(typeof(selector) == "number" && ((selector | 0) === selector)) {
@@ -32,9 +32,9 @@ js_uipages_Group.prototype = {
 		this.parent.children().each(function(index,element) {
 			var that = $(this);
 			if(that[0] != page[0]) {
-				that.hide(_gthis.hideOptions);
+				that.hide(overrideHideOptions || _gthis.hideOptions);
 			} else {
-				that.show(_gthis.showOptions);
+				that.show(overrideShowOptions || _gthis.showOptions);
 				_gthis.currentPage = that;
 				_gthis.currentPageId = that.attr("id");
 				_gthis.currentPageIndex = that.index();
