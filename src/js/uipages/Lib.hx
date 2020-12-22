@@ -11,7 +11,7 @@ class Lib {
     static var instances = new Map<JQuery, Group>();
 
     static function uiPages(?parameter1, ?parameter2) {
-        var that:JQuery = untyped __js__("this");
+        var that:JQuery = js.Syntax.code("this");
         if(parameter1 == null || (parameter1 != null && parameter2 != null)) {
             createGroup(that, parameter1, parameter2);
         } else if(parameter1 == 'next') {

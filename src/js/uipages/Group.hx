@@ -28,7 +28,7 @@ class Group {
         }
 
         parent.children().each(function(index:Int, element:js.html.Element) {
-            var that:JQuery = new JQuery(untyped __js__("this"));
+            var that:JQuery = new JQuery(js.Syntax.code("this"));
 
             if(that[0] != page[0]) {
                 that.hide(overrideHideOptions || this.hideOptions);
