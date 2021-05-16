@@ -24,7 +24,7 @@ class Lib {
         return that;
     }
 
-    public static function createGroup(parent:JQuery, ?showOptions, ?hideOptions):Group {
+    public static function createGroup(parent:JQuery, ?showOptions:Dynamic, ?hideOptions:Dynamic):Group {
         var instance = new Group(parent, showOptions, hideOptions);
         instances[parent] = instance;
         return instance;
